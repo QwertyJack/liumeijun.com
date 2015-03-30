@@ -1,0 +1,89 @@
+/*{{{*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img { 
+	border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:bold;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { border:0;
+}
+
+body, html {
+	height: 100%;
+	width: 100%;
+}
+
+/* Common 定义基本样式 */
+body {
+	font: 12px/1.8 'Microsoft Yahei','Helvetica Neue',Helvetica,Arial,Sans-serif;
+	padding: 0;
+	margin: 0;
+	color: #333333;
+}
+
+#map {
+	height: 100%;
+	width: 100%;
+}
+
+#loading {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 999;
+	background: url("../images/site/loading.gif") no-repeat center center #FFFAD1;
+	top: 0;
+	left: 0;
+	text-align: center;
+	line-height: 300px;
+	font-size: 32px;
+	color: #666;
+}
+#theEnd {
+	height: 0%;
+	width: 100%;
+	line-height: 0;
+	font-size: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: 999;
+	background-color: #FFFAD1;
+	top: 0;
+	left: 0;
+}
+
+#theEndText {
+	position: absolute;
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+	text-align: center;
+	font-size: 26px;
+	line-height: 2;
+	top: 50%;
+	margin-top: -100px;
+	height: 200px;
+}
+/*}}}*/
