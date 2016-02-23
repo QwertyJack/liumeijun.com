@@ -1,8 +1,8 @@
 Hello wenjing!
 ==============
 
-The origin is [Hello Meijun](https://github.com/loo2k/liumeijun.com).
-Jack @ 2015-03-29 modified with Google Map API.
+The origin is [Hello Meijun](https://github.com/loo2k/liumeijun.com),
+modified by Jack 2015-03-29 with Google Map API.
 
 Action flow
 =======
