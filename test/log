@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN"  xmlns:wb="http://open.weibo.com/wb">
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="http://cdn-hz.renrenjiang.cn/assets/favicon-44fff4c1fc0f63253339dd145f910138e5c52498da4ee95955e473a5580c967b.ico" />
+  <title>人人讲</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="云拓锐联科技有限公司">
+  <meta name="keywords" content="人人讲">
+  <meta name="description" content="人人讲，每个人都可以做老师，分享知识">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="screen-orientation" content="portrait">
+  <meta name="x5-orientation" content="portrait">
+  <meta name="browsermode" content="application">
+  <meta name="x5-page-mode" content="app">
+  <link rel="stylesheet" media="all" href="http://cdn-hz.renrenjiang.cn/assets/a/mob/show2-7ecab6cd71f7338b6605b901034d68886a88ea615037bea0fa69ecec91edd165.css" />
+
+</head>
+<body>
+  <!-- 放入head标签 start -->
+<!-- 放入head标签 end -->
+<div class="body-container">
+  <!-- 页面头部 start -->
+  <header>
+  <img height="30px" class="logo" src="http://cdn-hz.renrenjiang.cn/assets/a/show2/logo-db2431ce8273a028486aa418c84d8813e3064210d767761f1a1be37936464fd7.png" alt="Logo db2431ce8273a028486aa418c84d8813e3064210d767761f1a1be37936464fd7" />
+  <!-- <img height="41px" class="logo" src="http://cdn-hz.renrenjiang.cn/assets/v/show/mob/logo-eaf28cf0581c0e0240cb5da33d7b8dfd9d2bc5e45ae5827abc491b825a32fa44.png" alt="Logo eaf28cf0581c0e0240cb5da33d7b8dfd9d2bc5e45ae5827abc491b825a32fa44" /> -->
+  <img height="25px" class="download" src="http://cdn-hz.renrenjiang.cn/assets/a/show2/download-e694069ab1d06bd50730f21c8ba48e79be52bf63301b998c22c6da5b57d07b97.png" alt="Download e694069ab1d06bd50730f21c8ba48e79be52bf63301b998c22c6da5b57d07b97" />
+</header>
+
+<div class="iphone_download_tips">
+  <p>
+  请选择右上角的"..."按钮,<br/> 选择Safari打开网页.
+  </p>
+  <img src="http://cdn-hz.renrenjiang.cn/assets/v/new_style/jiantou-ea172ab236d318defb252bc62c5c065f97754568918adfb3dd116d839604e5f7.png" alt="Jiantou ea172ab236d318defb252bc62c5c065f97754568918adfb3dd116d839604e5f7" />
+</div>
+
+  <!-- 页面头部 end -->
+
+  <!-- 页面主体区域  start-->
+  <div class="notice_container">
+  <!-- 视频区域 start-->
+  	<div class="medias">
+      <!-- 视频海报区域 start-->
+      <div class="bg">
+        <!-- 顶部状态区域 start-->
+        <i class="label label5" ></i>
+        <!-- 顶部状态区域 end-->
+
+        <!-- 底部价格区域 start -->
+          <div class="money">
+              ￥19.99<span class="paid">已购买</span>
+          </div>
+        <!-- 底部价格区域 end -->
+
+        <img class="bg" src="http://image.renrenjiang.cn/uploads/activity/background/43787/2017_a899ca903bc7ce8e30149b7bb4a35885.jpeg@640w" alt="2017 a899ca903bc7ce8e30149b7bb4a35885" />
+      </div>
+      <!-- 视频海报区域 end-->
+
+      <!-- 视频播放器和底部播放控制拦  start-->
+  	  <div class="video_wrapper">
+  			<video id="video" src="http://video.renrenjiang.cn/record/alilive/7929039687.m3u8"
+              x-webkit-airplay="allow"   playsinline="true"
+              x5nativepanel=""
+              webkit-playsinline="" ></video>
+         <!-- 视频底部控制条 start -->
+  	    <div class="controls_wrapper">
+  	      <div class="controls">
+  	        <div class="play_btn"></div>
+  	        <div class="pause_btn"></div>
+  	        <div class="progress_wrapper">
+  	          <div class="progress_bar">
+  	            <div class="time_bar"></div>
+  	          </div>
+  	        </div>
+  	        <div class="fullscreen_btn"></div>
+  	      </div>
+  	    </div>
+        <!-- 视频底部控制条 end -->
+  	  </div>
+      <!-- 视频播放器和底部播放控制拦  end-->
+
+      <!-- 视频中间的播放按钮 start -->
+      <a class="play_btn" id="play_btn" style="display: none;"></a>
+      <a class="loading" id="loading"></a>
+      <!-- 视频中间的播放按钮 end -->
+
+    </div>
+    <!-- 视频区域 end-->
+
+    <!-- 页面中间tab切换菜单栏  start-->
+    	<div class="tabh1">
+      	<div class="for_detail">
+      		<div class="left show_detail current" onclick="hide_chat()">简介</div>
+      		<a class="right back show_chat" onclick="show_chat()"></a>
+      	</div>
+      	<div class="for_chat">
+      		<div class="left show_chat current" onclick="show_chat()">在线交流</div>
+          <a class="right back" onclick="hide_chat()"></a>
+      	</div>
+    	</div>
+    <!-- 页面中间tab切换菜单栏  end-->
+
+    <!-- 活动的相关信息区域 start -->
+    <div class="information">
+      <!-- 活动标题 start-->
+      <h1 class="emoji">提高形表现的运动集锦（男女共练）</h1>
+      <!-- 活动标题 end -->
+
+      <!-- 倒计时和开播提醒 start -->
+      <!-- 倒计时和开播提醒 end -->
+
+      <!-- 活动简介 start -->
+    	  <div class="info">
+    	    <h5>简介</h5>
+    	    <div class="emoji" id="introduce">
+    	    	<div class="introduce_inner">
+    	      	<p>来，亲身展示一遍</p>
+    	    	</div>
+    	    </div>
+    	  </div>
+
+          <!-- 显示二维码 start -->
+        <!-- 显示二维码 end -->
+        <!-- 活动简介  end -->
+
+      <!-- 主播 start -->
+      <div class="info">
+        <h5>讲师</h5>
+        <div class="user_info row">
+  <div class="avatar col-xs-2 link-to-homepage" >
+      <div class="img" style="background-image: url(http://image.renrenjiang.cn/uploads/user/avatar_url/512002/2017_f76f8b8e2e6d60f2d07a3462d1a7730a.jpg@640w)"></div>
+  </div>
+  <div class="details col-xs-10">
+    <div class="nickname emoji">
+      @熙墨实验室CEO
+    </div>
+    <div class="emoji">
+      李熙墨 
+情趣私教 
+留英工科硕士 多家媒体两性栏目作家及顾问 
+专注挖掘两性真实需求 
+破除a 片误导 去伪存真探索科学性知识  教你闺房1000种玩法，让你和你爱的人更快乐！
+
+    </div>
+  </div>
+</div>
+
+      </div>
+        <div class="referral-link row">
+          <div class="col-xs-11">
+            参与课程推广
+          </div>
+          <div class="gt-img">
+              &gt;
+          </div>
+        </div>
+      <!-- 主播 end -->
+      <div class="height60"></div>
+    </div>
+    <!-- 活动的相关信息区域 start -->
+
+    <!-- 聊天区域 start -->
+    <div class="communication">
+    	<div class="list" id="comment_list">
+    		<div class="notice">
+    			<img width="120" src="http://cdn-hz.renrenjiang.cn/assets/a/show2/logo2-ef9f1bfee12af66a9bba19b666eb115f4b05f6264c982a38a51494f8b86b4947.png" alt="Logo2 ef9f1bfee12af66a9bba19b666eb115f4b05f6264c982a38a51494f8b86b4947" />
+    			<p>
+            还没有人讨论<br/>
+            快来发表第一条讨论吧
+          </p>
+    		</div>
+    		<div class="more_btn">
+    			<span class="loaded">上拉加载更多</span>
+    			<span class="loading">加载中</span>
+    		</div>
+    	</div>
+    	<div class="to_comment" onclick="to_chat();">
+    		<img width="20" src="http://cdn-hz.renrenjiang.cn/assets/a/show2/to_comment-55999fdce076da152f21d1871295e706dfa71c10a6655487056682f5be213b97.png" alt="To comment 55999fdce076da152f21d1871295e706dfa71c10a6655487056682f5be213b97" />
+    	</div>
+    	<div class="input">
+    		<form class="comment">
+    			<input type="text" name="comment" id="comment" value="" placeholder="说点什么吧！" />
+    		</form>
+    		<div class="locked_comment">
+    			<img width="19" height="22" src="http://cdn-hz.renrenjiang.cn/assets/a/show2/locked_comment-9aaf841fe806bfd9344ef8fc7e6a7f20461a2bced3fd4664ff6f3bf9028c7bdb.png" alt="Locked comment 9aaf841fe806bfd9344ef8fc7e6a7f20461a2bced3fd4664ff6f3bf9028c7bdb" />
+    			主播已禁止发言
+    		</div>
+    		<a class="submit" onclick="send_comment();">
+    			<img width="50" height="35" src="http://cdn-hz.renrenjiang.cn/assets/a/show2/send-9df7128d5d64dae06b69eca926f8430312df19f933b809520ca15c73e3b6d957.png" alt="Send 9df7128d5d64dae06b69eca926f8430312df19f933b809520ca15c73e3b6d957" />
+    		</a>
+    	</div>
+    </div>
+    <!-- 聊天区域 end -->
+
+    <!-- 底部菜单 购买和已购买通道部分 start -->
+      <div class="cover order_cover">
+        <div class="order">
+          <h3>确认购买</h3>
+          <div class="order_info">
+            <div class="left ohodler">
+              <img width="70" src="http://image.renrenjiang.cn/uploads/activity/background/43787/2017_a899ca903bc7ce8e30149b7bb4a35885.jpeg@640w" alt="2017 a899ca903bc7ce8e30149b7bb4a35885" />
+            </div>
+            <div class="left odetail">
+              提高形表现的运动集锦（男女共练）<br />
+              <span>￥ 19.99</span>
+            </div>
+          </div>
+          <div class="to_pay">
+            <a id="pay_btn" onclick="to_pay()" style="display: block;"><span class="word">支付</span><span class="dots">...</span></a>
+          </div>
+          <div class="to_qrcode_pay" style="display: none;">
+            <div class="div1">微信扫描支付</div>
+            <div class="div2"><hr/></div>
+            <div class="div3">遇到不允许跨号支付？</div>
+            <div class="div4"><img src="" width="200px" id="qrcode_png" ></div>
+            <div class="div5">长按图片【识别二维码】付款</div>
+            <div class="div2"><hr/></div>
+            <div><a href="javascript:void(0);" onclick="reloadpage()">我已经支付完成</a></div>
+          </div>
+        </div>
+      </div>
+    <!-- 底部菜单 购买和已购买通道部分 end -->
+
+    <!-- 已购买通道的底部弹窗 start -->
+    <div class="cover member-cover">
+      <div class="validate-content">
+        <div class="validate-member">
+          <h3>验证密码</h3>
+          <div class="validate-member-content">
+            <div class="row validate-member-input">
+              <div class="col-xs-2 input-lock">
+                <img height="28px" src="http://cdn-hz.renrenjiang.cn/assets/v/lock-f90d1f56372ca3f117ee13fb74754434876e18546712b93f7c285727f28c1723.png" alt="Lock f90d1f56372ca3f117ee13fb74754434876e18546712b93f7c285727f28c1723" />
+              </div>
+              <div class="col-xs-10 validate-input-div">
+                <input type="text" name="validateMember" id ="validateMember" class ="form-control member" placeholder="请输入密码" />
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+             <img width="100%" onclick="validateMember()" src="http://cdn-hz.renrenjiang.cn/assets/a/show2/password-277806a5176920cd29286f3030a2bbe3f8e97a466daa1de35236ecf89d5d8ce9.png" alt="Password 277806a5176920cd29286f3030a2bbe3f8e97a466daa1de35236ecf89d5d8ce9" />
+          </div>
+        </div>
+        <div class="validate-phone">
+          <h3>已购买验证</h3>
+          <div class="validate-phone-content">
+            <div class="row row-border">
+              <div class="col-xs-12 validate-input-div">
+                <input type="text" name="phoneNumber" id ="phoneNumber" class ="member" placeholder="请输入购买时填写的手机号" />
+              </div>
+            </div>
+            <div class="row row-border">
+              <div class="col-xs-6 row-border validate-input-div">
+                <input type="text" name="vcode" id ="vcode" class ="member" placeholder="请输入验证码" />
+              </div>
+              <div class="col-xs-6 row-border validate-phone-btn-div">
+                <input type="button"  id="getPhoneMessage" onclick="getPhoneMessage()" role="button" value="获取验证码">
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+             <img width="100%" onclick="yanzheng()" src="http://cdn-hz.renrenjiang.cn/assets/a/show2/yanzheng-d6730fcf5b9f05f4e4bf8d74a5ceb6e535ed7aea83793438b7852708384ef4d2.png" alt="Yanzheng d6730fcf5b9f05f4e4bf8d74a5ceb6e535ed7aea83793438b7852708384ef4d2" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 已购买通道的底部弹窗 end -->
+  </div>
+</div>
+<!-- 底部菜单 start -->
+  <div class="bottom-menu-container" >
+    <div class="bottom-menu-body">
+      <div class="col-xs-3 bottom-menu-div link-to-homepage">
+        <div><img width="25" src="http://cdn-hz.renrenjiang.cn/assets/a/show2/user_home-82265f6b251bba737a27629344611c8d9cd363a291880adaf1e473e7041151d3.png" alt="User home 82265f6b251bba737a27629344611c8d9cd363a291880adaf1e473e7041151d3" /></div>
+        <div>更多课程</div>
+      </div>
+      <div class="col-xs-3 bottom-menu-div"  onclick="to_create_activity()">
+        <div><img width="25" src="http://cdn-hz.renrenjiang.cn/assets/a/show2/add-935ea5abdbcd528e7d541b3e0e969d9c4303020e5013e094141cb6bb4565bf60.png" alt="Add 935ea5abdbcd528e7d541b3e0e969d9c4303020e5013e094141cb6bb4565bf60" /></div>
+        <div>创建直播</div>
+      </div>
+      <div class="col-xs-6 bottom-menu-div vertical-div">
+        <div class="btn-div-container" onclick="make_reservation()" >
+          <div class="btn-div-body">报名</div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 底部菜单 end -->
+<!-- 页面主体区域  end-->
+<!--footer>
+  © 2015 juchang.tv
+</footer-->
+
+<!-- =====================================非文档流区域 start====================================== -->
+<!-- 弹窗div start -->
+<div class="alert"></div>
+<!-- 弹窗div end -->
+
+<!-- 打赏弹窗 start-->
+<div class="cover reward_cover">
+  <div class="redbag">
+    <div class="close">
+      <img width="15" height="15" src="http://cdn-hz.renrenjiang.cn/assets/a/show2/close_btn-53f19f610658424394b2fd3bd64a5a3f9c3916dd74aca9e6f02eb3370ba720e1.png" alt="Close btn 53f19f610658424394b2fd3bd64a5a3f9c3916dd74aca9e6f02eb3370ba720e1" />
+    </div>
+    <div class="avatar">
+      <img src="http://image.renrenjiang.cn/uploads/user/avatar_url/512002/2017_f76f8b8e2e6d60f2d07a3462d1a7730a.jpg@640w" alt="2017 f76f8b8e2e6d60f2d07a3462d1a7730a" />
+    </div>
+    <div class="nickname">
+      @熙墨实验室CEO
+    </div>
+    <div class="description">
+      李熙墨 
+情趣私教 
+留英工科硕士 多家媒体两性栏目作家及顾问 
+专注挖掘两性真实需求 
+破除a 片误导 去伪存真探索科学性知识  教你闺房1000种玩法，让你和你爱的人更快乐！
+
+    </div>
+    <hr />
+    <ul>
+      <li>
+        <span>2</span>元
+      </li>
+      <li>
+        <span>5</span>元
+      </li>
+      <li>
+        <span>10</span>元
+      </li>
+      <li>
+        <span>50</span>元
+      </li>
+      <li>
+        <span>100</span>元
+      </li>
+      <li>
+        <span>200</span>元
+      </li>
+    </ul>
+    <div class="more_price">
+      其他金额
+    </div>
+    <div class="to_reward">
+      <img src="http://cdn-hz.renrenjiang.cn/assets/a/show2/reward_btn-f37fd05fa7a45e6c0a74b2ca22009a104e9faeaed48378bc53a4919c8895cc27.png" alt="Reward btn f37fd05fa7a45e6c0a74b2ca22009a104e9faeaed48378bc53a4919c8895cc27" />
+    </div>
+  </div>
+</div>
+<!-- 打赏弹窗 end-->
+
+<!-- 设置开播提醒二维码弹窗 start -->
+<div class="cover saoma_cover">
+  <div class="saoma">
+  <div class="h1 row">
+    <div class="col-xs-11" style="padding-left: 15px;" id="qrcode_title">
+      设置开播提醒
+    </div>
+    <div class="col-xs-1" onclick="hide_saoma2()">
+      <img height="15px" src="http://cdn-hz.renrenjiang.cn/assets/a/show2/Shape-1202fc3c619a95b780d15677002c2d2c81ffcc32cf2311f4ce8e5e8017b578c1.png" alt="Shape 1202fc3c619a95b780d15677002c2d2c81ffcc32cf2311f4ce8e5e8017b578c1" />
+    </div>
+  </div>
+    <p class="p1">
+      您可以设置开播提醒
+    </p>
+    <div class="erweima">
+      <img class="rrjqr"/>
+    </div>
+    <p class="p3">
+      扫描二维码关注公众号，可在开播前15分钟<br />
+      收到本活动的开播提醒，及活动链接
+    </p>
+  </div>
+</div>
+<!-- 设置开播提醒二维码弹窗 end -->
+
+<!-- Modal -->
+<div class="modal fade referralModal" id="referralModal" tabindex="-1" role="dialog" aria-labelledby="referralModalLabel" data-backdrop="false" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title" id="referralModalLabel">
+          <span class="red-color">不要关闭此弹窗</span>，点击页面右上角 ••• <span class="blod">发送给好友</span>或<span class="blod">朋友圈</span>
+        </div>
+      </div>
+<!--       <div class="modal-body">
+        通过你的链接带来的用户，报名费用的10.0%将作为你的佣金收入
+      </div> -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="closeReferralModal" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================非文档流区域 end======================================= -->
+
+
+</body>
+
+  <script src="http://faye.renrenjiang.cn:9000/faye/faye.js"></script>
+  <script type="text/javascript">
+    var holder_height, video_width, video_height;
+    var horizontal   = false;
+    var stopped      = true;
+    var locked       = false;
+    var should_pay   = true;
+    var video_token  = "39bi3cpxp1n3d";
+    var video_id     = 126673;
+    var activity_id  = 43787;
+    var video_status = 2;
+    var verifyWay    = 1;
+    var shower_id    = 512002;
+
+    	var until    = -2062420;
+			var obj_type = 'activity';
+			var obj_id   = "43787";
+			var title    = "提高形表现的运动集锦（男女共练）";
+
+    var faye_url = "http://faye.renrenjiang.cn:9000/faye";
+    var channel  = "/a/43787";
+    var client   = new Faye.Client(faye_url);
+    var format   = "html";
+
+    var wx_openid, current_user_id, auth_logged_in, to;
+    var paid = false;
+
+    var astatus = 5;
+    var page_type = "activity";
+
+      var commentable = true;
+
+  		var pay_id    = "43787";
+  		var pay_title = "提高形表现的运动集锦（男女共练）";
+  		var price     = "1999.0";
+  	var appid = "wx04d0d114a67b299f";
+
+  	var node_server  = "http://renrenjiang.cn/node";
+    var html5_domain = "http://html5.renrenjiang.cn";
+    var api_domain   = "http://api.renrenjiang.cn";
+
+    var qr_ticket;
+
+    var wechat_subscribed = false;
+    var reservation       = false;
+    var caring            = false;
+
+    var need_contact = false;
+
+
+    var wx_data = {
+      img:   'http://renrenjiang.oss-cn-hangzhou.aliyuncs.com/uploads/activity/background/43787/2017_a899ca903bc7ce8e30149b7bb4a35885.jpeg',
+      data_url: window.location.href,
+      title: '提高形表现的运动集锦（男女共练）',
+      timeline_title: '提高形表现的运动集锦（男女共练）,02月23日21:00,熙墨实验室CEO与您相约人人讲,我们不见不散。',
+      desc: "来，亲身展示一遍"
+    };
+  </script>
+  <script src="http://cdn-hz.renrenjiang.cn/assets/emoji-a01e28b22c13419e61c8cec291f77b655d5d981eab3005b08035e55adc2d7db8.js"></script>
+<script src="http://cdn-hz.renrenjiang.cn/assets/plugins/emoji-e28bde8b76da4990edf1c9aaa4aa7506a693fbbef2615972437f872140de8f7a.js"></script>
+  <script src="http://cdn-hz.renrenjiang.cn/assets/a/mob/show2-09f9faeaf53d653a6aeeb492c779f7d7b35a104ba482b08e2c2bae20e455237c.js"></script>
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      var callback = function(data){
+        wx_data.data_url = window.location.href.replace('&code='+getUrlParameter('code'), '').replace('&state=USERINFO', '');
+
+        configuration = {
+          debug:     false,
+          appId:     data.appId || data.app_id,
+          timestamp: data.timestamp,
+          nonceStr:  data.nonceStr || data.nonce_str,
+          signature: data.signature,
+          jsApiList: [
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'chooseWXPay'
+          ]
+        }
+        wx.config(configuration);
+        wx.ready(function () {
+          //右上角菜单分享
+         initMenuShare();
+        });
+      }
+      if(is_weixin()) {
+        $.get(api_domain+"/wechat/jsconfig",{url: window.location.href},callback);
+      }
+    });
+  </script>
+
+
+</html>

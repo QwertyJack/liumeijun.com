@@ -1,0 +1,5 @@
+*.sw[po]
+*.pyc
+*/assets
+*.db
+index.html
