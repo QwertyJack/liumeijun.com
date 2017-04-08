@@ -1,0 +1,16 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>视频教程</h1>
+{% for item in rrj %}
+    <div><h3>{{ item[0] }}. <a href="rrj/assets/{{ item[-1] }}">{{ item[1] }}</a></h3></div>
+    <p>{{ item[2].replace('\n', '<br>') }}</p></div>
+{% endfor %}
+<div></div>
+<h1>互动电台</h1>
+{% for item in hrs %}
+<div><h3>{{ item[0] }}. <a href="hrs/assets/{{ item[-1] }}">{{ item[1] }}</a>({{ item[2] }})</h3>
+    <p>{{ item[3].replace('\n', '<br>') }}</p></div>
+{% endfor %}
+</body>

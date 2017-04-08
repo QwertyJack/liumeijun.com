@@ -1,0 +1,15 @@
+/*
+ * my.css
+ * Copyright (C) 2017 jack
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+body {
+	background: pink;
+}
+
+.item {
+    list-style: none;
+    margin-bottom: 30px;
+}
