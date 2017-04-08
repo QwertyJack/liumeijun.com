@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
-import requests
 import lxml.html
-import subprocess
-import sqlite3
 import os.path
+import requests
+import sqlite3
+import subprocess
 
 dir = 'assets'
 prefix = 'http://renrenjiang.cn/activities/detail/'
@@ -35,7 +35,7 @@ if __name__ == '__main__':
 
     with open('list') as f:
         for line in f.readlines():
-            q = line.strip()
+            q = line[:line.find(' ')].strip()
             if search(q) > 0:
                 print 'Skip: ' + q
             else:

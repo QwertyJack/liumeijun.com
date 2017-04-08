@@ -32,6 +32,20 @@ create table hrs (
 );
               ''')
 
+    c.execute('drop table if exists yy')
+    c.execute('''
+create table yy (
+  id        integer primary key autoincrement,
+  pid       char,
+  title     char,
+  beginTime integer,
+  endTime   integer,
+  duration  char,
+  videoUrl  char,
+  entry     char
+);
+              ''')
+
 if __name__ == '__main__':
     db_init(c)
     conn.commit()

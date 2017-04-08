@@ -1,6 +1,8 @@
 *.sw[po]
 *.pyc
-*/assets
 *.db
 index.html
 rrj/list
+*.mp4
+*.m3u8
+*.ts
