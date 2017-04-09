@@ -13,3 +13,22 @@ body {
     list-style: none;
     margin-bottom: 30px;
 }
+
+p, h3 {
+    margin: 6px 0 6px 0;
+}
+
+a.mylink:link {
+    color: #1a0dab;
+    text-decoration: none;
+}
+
+a.mylink:visited {
+    color: #609;
+    text-decoration: none;
+}
+
+a.mylink:hover {
+    color: #bb4046;
+    text-decoration: underline;
+}

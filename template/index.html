@@ -25,7 +25,7 @@ $( function() {
             <div id="tabs-1">
                 {% for item in rrj | reverse %}
                 <div id="rrj_{{ item[0] }}" class="item">
-                    <h3><a href="rrj/mp4/{{ item[-1].replace('.m3u8', '.mp4') }}">{{ item[1] }}</a></h3>
+                    <h3><a class="mylink" href="rrj/mp4/{{ item[-1].replace('.m3u8', '.mp4') }}">{{ item[1] }}</a></h3>
                     <p>{{ item[2].replace('\n', '<br>') }}</p>
                 </div>
                 {% endfor %}
@@ -33,7 +33,7 @@ $( function() {
             <div id="tabs-2">
                 {% for item in hrs | reverse %}
                 <li id="hrs_{{ item[0] }}" class="item">
-                    <h3><a href="hrs/mp3/{{ item[-1].replace('.m3u8', '.mp3') }}">{{ item[1] }}</a></h3>
+                    <h3><a class="mylink" href="hrs/mp3/{{ item[-1].replace('.m3u8', '.mp3') }}">{{ item[1] }}</a></h3>
                     <p>{{ item[3].replace('\n', '<br>') }}</p>
                 </li>
                 {% endfor %}
@@ -41,8 +41,8 @@ $( function() {
             <div id="tabs-3">
                 {% for item in yy | reverse %}
                 <li id="yy_{{ item[0] }}" class="item">
-                    <h3><a href="yy/mp4/{{ item[-1].replace('.m3u8', '.mp4') }}">{{ item[1] }}</a></h3>
-                    <p>{{ item[2] }} - {{ item[3] }}</p>
+                    <h3><a class="mylink" href="yy/mp4/{{ item[-1].replace('.m3u8', '.mp4') }}">{{ item[1] }}</a></h3>
+                    <p>日期: {{ item[2] }}<br>时长: {{ item[3] }}</p>
                 </li>
                 {% endfor %}
             </div>
