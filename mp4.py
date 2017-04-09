@@ -18,6 +18,7 @@ dst = 'mp4'
 db = 'lxm.db'
 conn = sqlite3.connect(db)
 c = conn.cursor()
+workers = []
 
 def selectall(table):
     c.execute('select pid,videoUrl from ' + table)
@@ -27,7 +28,8 @@ def download(prefix, item):
     fp = prefix + '/' + item[0] + '.mp4'
     if os.path.isfile(fp):
         pass
-    subprocess.call(['ffmpeg', '-i', item[1], fp])
+    proc = subprocess.Popen(['ffmpeg', '-i', item[1], fp])
+    workers.append(proc)
 
 if __name__ == '__main__':
     for cate in ['yy']:
