@@ -7,12 +7,12 @@
 # Distributed under terms of the MIT license.
 
 """
-test
+main
 """
 
 from lxm import main, init
 
 if __name__ == '__main__':
-    init()
+    # init()
     main()
 
