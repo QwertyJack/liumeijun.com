@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Index</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static/jquery-ui.css">
+        <link rel="stylesheet" href="static/style.css">
+        <script src="static/jquery-1.12.4.js"></script>
+        <script src="static/jquery-ui.js"></script>
+        <link rel="stylesheet" href="static/my.css">
+        <script>
+$( function() {
+    $( "#tabs" ).tabs();
+} );
+        </script>
+    </head>
+	<body>
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">视频教程</a></li>
+                <li><a href="#tabs-2">互动电台</a></li>
+                <li><a href="#tabs-3">直播回顾</a></li>
+            </ul>
+            <div id="tabs-1">
+                {% for item in data['rrj'] | reverse %}
+                <div id="rrj_{{ item.id }}" class="item">
+                    <h3><a class="mylink" href="{{ item.entry }}">{{ item.title }}</a></h3>
+                    <p>{{ item.description.replace('\n', '<br>') }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div id="tabs-2">
+                {% for item in data['hrs'] | reverse %}
+                <li id="hrs_{{ item.id }}" class="item">
+                    <h3><a class="mylink" href="{{ item.entry }}">{{ item.title }}</a></h3>
+                    <p>{{ item.introduce.replace('\n', '<br>') }}</p>
+                    <p>时长: {{ item.costTime }}</p>
+                </li>
+                {% endfor %}
+            </div>
+            <div id="tabs-3">
+                {% for item in data['yy'] | reverse %}
+                <li id="yy_{{ item.id }}" class="item">
+                    <h3><a class="mylink" href="{{ item.entry }}">{{ item.title }}</a></h3>
+                    <p>日期: {{ item.time }}<br>时长: {{ item.duration }}</p>
+                </li>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
