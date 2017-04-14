@@ -18,7 +18,7 @@ DEBUG = True
 
 _pwd = os.path.dirname(os.path.abspath(__file__))
 _pattern = re.compile(r'(?<=/)[^/\.]*(?=\.m)')
-_worker = []
+_workers = []
 
 def _gf(item):
     filename = _pattern.search(item.videoUrl).group(0)
@@ -29,4 +29,4 @@ def _gf(item):
 def _down(url, output):
     print 'Down:', url, '->', output
     proc = subprocess.Popen(['ffmpeg', '-n', '-i', url, output])
-    workers.append(proc)
+    _workers.append(proc)
