@@ -2,7 +2,6 @@
 *.pyc
 *.db
 /index.html
-rrj/list
 *.mp4
 *.mp3
 *.m3u8

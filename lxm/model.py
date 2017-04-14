@@ -9,26 +9,22 @@
 """
 core
 """
-DEBUG=True
 
 import json
 import lxml.html
 import os.path
-import re
 import requests
 from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from utils import _pwd, _gf, _down
 
 Base = declarative_base()
 
-pwd = os.path.dirname(os.path.abspath(__file__))
-engine = create_engine('sqlite:///' + pwd + '/lxm.db')
+engine = create_engine('sqlite:///' + _pwd + '/lxm.db')
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-def init():
-    Base.metadata.create_all(engine)
 
 class rrj(Base):
     __tablename__ = 'rrj'
@@ -84,7 +80,7 @@ class rrj(Base):
 
     @classmethod
     def down(cls):
-        _down(cls)
+        down(cls)
 
     @classmethod
     def gen(cls):
@@ -126,7 +122,7 @@ class hrs(Base):
 
     @classmethod
     def down(cls):
-        _down(cls)
+        down(cls)
 
     @classmethod
     def gen(cls):
@@ -153,16 +149,16 @@ class yy(Base):
         items = []
         total = 100
         npage = 0
-    
+
         while len(items) < total:
             npage += 1
             page = requests.get(cls.__prefix__ + str(npage) + cls.__suffix__)
             ret = json.loads(page.text)
-    
+
             if ret['result'] != 0:
                 print 'Query failed, check internet.'
                 sys.exit(0)
-    
+
             ret = ret['data']
             total = ret['totalCount']
             items.extend(ret['list'])
@@ -183,7 +179,7 @@ class yy(Base):
 
     @classmethod
     def down(cls):
-        _down(cls)
+        down(cls)
 
     @classmethod
     def gen(cls):
@@ -192,25 +188,18 @@ class yy(Base):
 
 _cate = [rrj, hrs, yy]
 
-_pattern = re.compile(r'(?<=/)[^/\.]*(?=\.m)')
-def _gf(item):
-    filename = _pattern.search(item.videoUrl).group(0)
-    cls = item.__class__
-    fp = 'assets/' + cls.__name__ + '/' + cls.__ext__[1:] + '/' + filename + cls.__ext__
-    return fp
-
-def _down(cls, debug = DEBUG):
+def down(cls):
     items = session.query(cls).all()
 
-    if debug:
-        print 'Downloading ' + cls.__name__
-
     for item in items:
-        fp = pwd + '/../' + _gf(item)
+        fp = _pwd + '/../' + _gf(item)
         if os.path.isfile(fp):
             continue
         else:
-            print item,
+            _down(item.videoUrl, fp)
+
+def init():
+    Base.metadata.create_all(engine)
 
 def main():
     init()

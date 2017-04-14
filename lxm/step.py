@@ -4,20 +4,24 @@
 import ipdb
 import jinja2
 import codecs
+import re
 import time
-from .model import session, _cate, _gf
-
-env = jinja2.Environment(
-    loader = jinja2.PackageLoader('lxm', 'templates')
-)
+from .model import session, _cate
+from .utils import _gf
 
 def update():
     for cate in _cate:
         cate.update()
 
+
 def download():
     for cate in _cate:
         cate.down()
+
+
+env = jinja2.Environment(
+    loader = jinja2.PackageLoader('lxm', 'templates')
+)
 
 def generate():
     data = {}
@@ -30,6 +34,7 @@ def generate():
 
     with codecs.open('index.html', 'wb', encoding = 'UTF-8') as f:
         f.write(env.get_template('index.html').render(data=data))
+
 
 def main():
     update();

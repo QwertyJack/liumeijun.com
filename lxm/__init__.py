@@ -9,13 +9,12 @@
 """
 init
 """
-DEBUG=True
-
-from model import init
-from step import main, update, download, generate
+from .utils import DEBUG
+from .model import init
+from .step import main, update, download, generate
 
 if DEBUG:
-    from model import session, rrj, hrs, yy
+    from .model import session, rrj, hrs, yy
     __all__ = ['session', 'rrj', 'hrs', 'yy']
 else:
     __all__ = ['init', 'main']
