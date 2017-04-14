@@ -1,0 +1,6 @@
+AddDefaultCharset utf-8
+AuthType Basic
+AuthName "Nothing here, go off"
+AuthUserFile /etc/apache2/htpasswd
+Require valid-user
+Options -Indexes

@@ -32,19 +32,19 @@ $( function() {
             </div>
             <div id="tabs-2">
                 {% for item in data['hrs'] | reverse %}
-                <li id="hrs_{{ item.id }}" class="item">
+                <div id="hrs_{{ item.id }}" class="item">
                     <h3><a class="mylink" href="{{ item.entry }}">{{ item.title }}</a></h3>
                     <p>{{ item.introduce.replace('\n', '<br>') }}</p>
                     <p>时长: {{ item.costTime }}</p>
-                </li>
+                </div>
                 {% endfor %}
             </div>
             <div id="tabs-3">
                 {% for item in data['yy'] | reverse %}
-                <li id="yy_{{ item.id }}" class="item">
+                <div id="yy_{{ item.id }}" class="item">
                     <h3><a class="mylink" href="{{ item.entry }}">{{ item.title }}</a></h3>
                     <p>日期: {{ item.time }}<br>时长: {{ item.duration }}</p>
-                </li>
+                </div>
                 {% endfor %}
             </div>
         </div>
