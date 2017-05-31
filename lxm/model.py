@@ -17,7 +17,7 @@ import requests
 from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from utils import _pwd, _gf, _down
+from utils import _pwd, _gf, _down, _auth
 
 Base = declarative_base()
 
@@ -29,7 +29,7 @@ session = DBSession()
 class rrj(Base):
     __tablename__ = 'rrj'
     __url__ = 'http://renrenjiang.cn/api/v2/columns/18/finished_activities?page='
-    __headers__ = { 'Authentication': 'CN9U6cI1ApB3Jbf7lpWvjSUMDW2uzt2jNrWO1N0pIVQLh6IqFxhTiqHa6Cy0dyoA' }
+    __headers__ = { 'Authentication': _auth(__tablename__) }
     __ext__ = '.mp4'
 
     id = Column(Integer, primary_key=True)

@@ -10,6 +10,7 @@
 utils
 """
 
+import ConfigParser
 import os.path
 import re
 import subprocess
@@ -30,3 +31,8 @@ def _down(url, output):
     print 'Down:', url, '->', output
     proc = subprocess.Popen(['ffmpeg', '-n', '-i', url, output])
     _workers.append(proc)
+
+def _auth(cate):
+    cf = ConfigParser.ConfigParser()
+    cf.read(_pwd + '/../config.ini')
+    return cf.get(cate, 'auth')

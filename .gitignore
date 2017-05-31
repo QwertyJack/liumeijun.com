@@ -8,3 +8,4 @@
 *.ts
 /test
 /old
+config.ini
